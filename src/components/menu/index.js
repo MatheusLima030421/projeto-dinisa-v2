@@ -11,8 +11,8 @@ export const Menu = () => {
 	const navigate = useNavigate();
 	const location = useLocation();
 	const handleOpenNewTab = (path) => {
-		window.open(path, '_blank');
-	  };
+		window.open(path, "_blank");
+	};
 	const items = [
 		{
 			label: "Pós-Vendas",
@@ -46,10 +46,13 @@ export const Menu = () => {
 								handleOpenNewTab("/analise-leads");
 							},
 						},
-						{ label: "Estoque Seminovos",key: "2.2",
-						onClick: () => {
-							handleOpenNewTab("/estoque-seminovos");
-						}, },
+						{
+							label: "Estoque Seminovos",
+							key: "2.2",
+							onClick: () => {
+								handleOpenNewTab("/estoque-seminovos");
+							},
+						},
 						{ label: "Fluxo de Estoque", key: "2.3" },
 						{ label: "Vendas Showroom", key: "2.4" },
 					],
@@ -74,13 +77,40 @@ export const Menu = () => {
 				},
 			],
 		},
+		{
+			label: "Seminovos",
+			key: "4",
+			children: [
+				{
+					type: "group",
+					label: "Escolha o Dashboard",
+
+					children: [
+						{ label: "Estoque Inteligente", key: "4.1" },
+						{ label: "Fluxo de Estoque", key: "4.2" },
+					],
+				},
+			],
+		},
+		{
+			label: "Peças",
+			key: "5",
+			children: [
+				{
+					type: "group",
+					label: "Escolha o Dashboard",
+
+					children: [
+						{ label: "Renault Niterói", key: "5.1" },
+						{ label: "Renault São Gonçalo", key: "5.2" },
+						{ label: "Nissan Niterói", key: "5.3" },
+						{ label: "Jeep/RAM", key: "5.4" },
+						{ label: "Peugeot e Citroen", key: "5.5" },
+					],
+				},
+			],
+		},
 	];
 
-	
-	return (
-		<MenuStyled
-			mode="horizontal"
-			items={items}
-		/>
-	);
+	return <MenuStyled mode="horizontal" items={items} selectable={false} />;
 };

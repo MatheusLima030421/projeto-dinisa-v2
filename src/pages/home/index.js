@@ -1,9 +1,10 @@
 import { Container } from "./style";
+import home from "./home.png";
 
 export const Home = () => {
 	return (
 		<Container>
-			<p>teste</p>
+			<img src={home} alt="Descrição de Home" />
 		</Container>
 	);
 };

@@ -1,7 +1,9 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-	p {
-		color: red;
+	img {
+		width: 100%;
+		border: none;
+		padding: 0px;
 	}
 `;
